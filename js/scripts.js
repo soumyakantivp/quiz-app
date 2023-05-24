@@ -37,7 +37,7 @@ const quizArray = [
         id: "5",
         question: "In the last month, how often have you found that you could not cope with all the things that you had to do?",
         options: ["never", "almost never", "sometimes", "fairly often", "very often"],
-    }, 
+    },
     {
         id: "6",
         question: "In the last month, how often have you been able to control irritations in your life?",
@@ -60,7 +60,7 @@ const quizArray = [
     },
 ];
 
-function calc(){
+function calc() {
     /*
     var q1a = document.querySelector('input[name = "question-1-answers"]:checked').value;
     console.log(q1a);
@@ -161,7 +161,7 @@ function calc(){
     +q8_score +q9_score +q10_score;
 
     console.log(pss_score);
-*/
+
     //calculate profiling score
     var q2a = document.querySelector('input[name = "question-2-response"]:checked').value;
     console.log(q2a);
@@ -195,6 +195,27 @@ function calc(){
         +Number(q8a )+Number(q9a )+Number(q10a )+Number(q11a)+Number(q12a )+Number(q13a);
 
     console.log(profile_score)
+    */
+    /*
+        let p = fetch("http://localhost:8080/home/data");
+        p.then((value)=>{
+            console.log(value);
+        }).then((value)=>{
+            console.log(value);
+
+        })
+        */
+    let p = "1,2,3,4,45";
+    let total = p.split(",");
+    console.log(total);
+    var totalOut = document.getElementById("total-cgscore");
+    totalOut.innerHTML = total[4];
+    document.getElementById("quiz").remove();
+    document.getElementById("pssquiz").remove();
+    document.getElementById("quiz-i").remove();
+    document.getElementById("quiz-ii").remove();
+    document.getElementById("results").style.visibility="visible";
+
 }
 
 
